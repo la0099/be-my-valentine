@@ -36,6 +36,8 @@
             width: 450px;
             margin: 15px;
             border-radius: 15px;
+            max-width: 90%;
+            height: auto;
         }
 
         button {
@@ -117,57 +119,58 @@
 
 </div>
 
-    <script>
-        let clicks = 0;
-        let yesSize = 20;
+<script>
+    let clicks = 0;
+    let yesSize = 20;
 
-        const yesBtn = document.getElementById("yesBtn");
-        const noBtn = document.getElementById("noBtn");
-        const message = document.getElementById("message");
-        const firstButtons = document.getElementById("firstButtons");
-        const finalButtons = document.getElementById("finalButtons");
-        const giftBtn = document.getElementById("giftBtn");
-        const giftSection = document.getElementById("giftSection");
-        const buttons = document.getElementById("buttons");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
+    const firstButtons = document.getElementById("firstbuttons"); // MATCH ID
+    const finalButtons = document.getElementById("finalButtons");
+    const giftBtn = document.getElementById("giftBtn");
+    const giftSection = document.getElementById("giftSection");
 
-        function handleClick() {
-            clicks++;
-            yesSize += 10;
-            yesBtn.style.fontSize = yesSize + "px";
+    function handleClick() {
+        clicks++;
+        yesSize += 10;
+        yesBtn.style.fontSize = yesSize + "px";
 
-            if (clicks === 1) {
-                message.innerText = "Are you sure babe? ";
-            } 
-            else if (clicks === 2) {
-                message.innerText = "I thought you loved me 💔";
-            } 
-            else if (clicks === 3) {
-                yesBtn.innerText = "Yes baby!!!!!!!! ";
-            }
-                 
-              else if (clicks === 4) {
+        if (clicks === 1) {
+            message.innerText = "Are you sure babe?😢😞";
+        } 
+        else if (clicks === 2) {
+            message.innerText = "I thought you loved me 💔";
+        } 
+        else if (clicks === 3) {
+            message.innerText = "YAY!! I knew you would say YES!!!! ";
+            firstButtons.style.display = "none";
+            finalButtons.style.display = "block";
+        }
+             else if (clicks === 4) {
                message.innerText = "YAY!! I knew you would say YES!!!! ";
                 yesBtn.remove();
                 noBtn.remove();
-                  firstButtons.style.display = "none";
-            finalButtons.style.display = "block";
-           }
-        }
-                giftBtn.style.display = "inline-block";
-        }
+             }
+    }
 
-        giftBtn.onclick = function () {
-            giftBtn.style.display = "none";
-            buttons.style.display = "none";
-            giftSection.style.display = "block";
-        };
+    function showGiftBtn() {
+        finalButtons.style.display = "none";
+        giftBtn.style.display = "inline-block";
+    }
 
-        yesBtn.onclick = handleClick;
-        noBtn.onclick = handleClick;
-    </script>
+    giftBtn.onclick = function () {
+        giftBtn.style.display = "none";
+        giftSection.style.display = "block";
+    };
+
+    yesBtn.onclick = handleClick;
+    noBtn.onclick = handleClick;
+</script>
 
 </body>
 </html>
+
 
 
 
