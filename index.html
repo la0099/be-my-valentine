@@ -147,11 +147,6 @@
         firstButtons.style.display = "none";
         finalButtons.style.display = "block";
         }
-             else if (clicks === 4) {
-                message.innerText = "YAY!! I knew you would say YES!!!! ";
-                yesBtn.remove();
-                noBtn.remove();
-             }
     }
 
     function showGiftBtn() {
@@ -161,7 +156,8 @@
 
     giftBtn.onclick = function () {
         giftBtn.style.display = "none";
-        giftSection.style.display = "block";
+        message.innerText = "YAY!! I knew you would say YES!!!!";
+         giftBtn.style.display = "inline-block";
     };
 
     yesBtn.onclick = handleClick;
@@ -170,6 +166,7 @@
 
 </body>
 </html>
+
 
 
 
